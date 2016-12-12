@@ -8,9 +8,13 @@
 @show
 
 <div class="container">
-    <h1> @yield('content')</h1>
+    <div class="row marketing">
+        <div class="col-lg-5 nodos">
+    @yield('content')
+            </div>
+        </div>
     <h2> @yield('content2')</h2>
-    <h3> @yield('content2')</h3>
+    <h3> @yield('content3')</h3>
 </div>
 </body>
 </html>

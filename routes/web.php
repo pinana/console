@@ -27,5 +27,5 @@ Route::get('about', 'PagesController@about' );
 
 Route::get('bootstrap', 'PagesController@bootstrap' );
 
-Route::get('cards', 'CardsController@index');
+Route::get('datos', 'CardsController@index');
 
