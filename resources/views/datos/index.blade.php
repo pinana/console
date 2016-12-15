@@ -54,7 +54,7 @@
 @section ('content2')
    content 2
    <br>
-   <button class="btn btn-primary btn-xs btn-detail open-modal" value="">añadir nodo</button>
+   {{link_to_route('datos.create','Add new nodo', null, ['class'=>'btn btn-primary btn-xs'])}}
    <button class="btn btn-primary btn-xs btn-delete delete-task" value="">save</button>
 @stop
 

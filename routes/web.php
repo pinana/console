@@ -27,5 +27,11 @@ Route::get('about', 'PagesController@about' );
 
 Route::get('bootstrap', 'PagesController@bootstrap' );
 
-Route::get('datos', 'CardsController@index');
 
+
+
+Auth::routes();
+
+Route::resource('datos', 'CardsController');
+
+Route::get('/home', 'HomeController@index');
