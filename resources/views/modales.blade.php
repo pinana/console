@@ -115,4 +115,81 @@
         </div>
     </div>
 @stop
+
+@section('MODAL_NODO')
+    <div id="MODAL_NODO" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">CREAR NODO</h4>
+                </div>
+                <div class="modal-body">
+                    <div clas="panel-heading">editar</div>
+                    {!! Form::open(array('route'=> 'datos.store')) !!}
+
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+
+
+
+                                            <tr>
+                                                <td><div class="form-group">
+                                                        {!!  Form::label('description', 'Enter description') !!}
+                                                        {!!  Form::text('description', null,  ['class' => 'form-comtrol']) !!}
+
+                                                    </div></td>
+                                                <td> <div class="form-group">
+                                                        {!!  Form::label('AET', 'Enter AETS') !!}
+                                                        {!!  Form::text('AET', null,  ['class' => 'form-comtrol']) !!}
+
+                                                    </div></td>
+                                                <td> <div class="form-group">
+                                                        {!!  Form::label('host', 'Enter host') !!}
+                                                        {!!  Form::text('host', null,  ['class' => 'form-comtrol']) !!}
+
+                                                    </div></td>
+                                                <td><div class="form-group">
+                                                        {!!  Form::label('port', 'port') !!}
+                                                        {!!  Form::text('port', null,  ['class' => 'form-comtrol']) !!}
+
+                                                    </div></td>
+
+
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <div class="form-group">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+
+
+                        {!!  Form::button('Create', ['type'=>'submit' , 'class'=>'btn btn primary']) !!}
+
+
+                    </div>
+
+
+
+
+
+                    {!! Form::close() !!}
+                </div>
+            </div>
+
+        </div>
+    </div>
+@stop
+
+
 @stop

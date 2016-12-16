@@ -13,7 +13,7 @@ class CardsController extends Controller
 {
    public function index()
    { $aets = DB::table('aets')->get();
-       return view('datos.index', compact('aets'));
+       return view('test', compact('aets'));
    }
 
     public function create()
