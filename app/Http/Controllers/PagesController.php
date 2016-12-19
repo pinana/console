@@ -1,7 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\aets;
+use Illuminate\Http\Request;
 
+use App\Http\Controllers\Controllers;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\NodoRequest;
 
 class PagesController extends Controller
 {
@@ -23,8 +28,10 @@ $nodos = ['ip', 'aet', 'port'];
 
     public function bootstrap()
     {
+        $aets = DB::table('aets')->get();
+        return view('firstbootstrap', compact('aets'));
 
 
-        return view('firstbootstrap');
+
     }
 }
