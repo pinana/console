@@ -21,9 +21,9 @@ Route::get('/tags', function () {
 
 
 
-Route::get('nodos', 'PagesController@home' );
 
-Route::get('about', 'PagesController@about' );
+
+
 
 Route::get('bootstrap', 'PagesController@bootstrap' );
 

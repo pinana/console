@@ -271,7 +271,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">CONFIRMAR</button>
+
                 </div>
             </div>
 

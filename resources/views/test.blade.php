@@ -49,9 +49,9 @@
                                 <td>{{$aet->port}}</td>
                                 <td>
 
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#MODAL_DELETE-{{$aet->id}}">DELETE</button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#MODAL_DELETE-{{$aet->id}}">DELETE</button>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-{{$aet->id}}">EDIT</button>
-                                    {{link_to_route('datos.edit', 'Edit',[$aet->id], ['class' =>'btn btn-primary']) }}
+
 
                                 </td>
                             </tr>
