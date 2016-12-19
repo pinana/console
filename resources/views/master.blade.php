@@ -1,92 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
-    <title>www.hc-kr.com</title>
+    <meta charset="UTF-8">
+    <title>{{ $page_title or "AdminLTE Dashboard" }}</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="{{ asset("/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="{{ asset("/bower_components/AdminLTE/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="{{ asset('css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/jumbotron-narrow.css') }}" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="{{ asset('js/ie-emulation-modes-warning.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="assets/js/jquery.checkboxes-1.2.0.min.js"></script>
-
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 
 </head>
 <body>
 
-<div class="container">
-    <div class="header clearfix">
 
-        @yield('sidebar-up')
+<body class="skin-blue">
+<div class="wrapper">
 
-
-    </div>
-
+    <!-- Header -->
+@include('header')
 
 
-    <div class="row marketing">
-        <div class="col-lg-5 nodos">
-            @yield('sidebar-left')
+
+
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                {{ $page_title or "Page Title" }}
+                <small>{{ $page_description or null }}</small>
+            </h1>
+            <!-- You can dynamically generate breadcrumbs here -->
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                <li class="active">Here</li>
+            </ol>
+        </section>
+        <div class="header clearfix">
+
+            @yield('sidebar-up')
+
+
         </div>
-
-
-            <div class="col-lg-4 fechas">
-                @yield('sidebar-fechas')
-            </div>
-
-                <div class="col-lg-3 modalitys">
-                    @yield('sidebar-modality')
+        <section class="content">
+            <!-- Your Page Content Here -->
+            <div class="row">
+                <div class="col-md-5 nodos">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Monthly Recap Report</h3>
+                            @yield('sidebar-left')
+                        </div>
+                    </div>
                 </div>
 
+                <div class="col-md-4 fechas">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Monthly Recap Report</h3>
+                            @yield('sidebar-fechas')
+                        </div>
+                    </div>
+                </div>
 
-
-    </div>
-
-
-    <div class="row marketing">
-        <div class="col-lg-12 patients">
-            @yield('patients')
-        </div>
-
-        <div class="row marketing">
-            <div class="col-lg-12 patients">
-                @yield('actions')
-
+                <div class="col-md-3 modalitys">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Monthly Recap Report</h3>
+                            @yield('sidebar-modality')
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div class="row g">
+                <div class="col-lg-12 patients">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            @yield('actions')
+
+                            @yield('patients')
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </section><!-- /.content -->
+
+
+
     </div>
+</div>
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-</div> <!-- /container -->
 
 
 
@@ -97,7 +119,11 @@
 @yield('modal_TAGS')
 @yield('MODAL_DOWNLOAD')
 
-
+<script src="{{ asset ("bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.3.min.js") }}"></script>
+<!-- Bootstrap 3.3.2 JS -->
+<script src="{{ asset ("bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset ("bower_components/AdminLTE/dist/js/app.min.js") }}" type="text/javascript"></script>
 </body>
 <script>
     $('#toggle-all').click(function() {
@@ -125,12 +151,12 @@
 
 
 
-            alert("Yes it A");
+        alert("Yes it A");
 
 
     });
 
-    </script>
+</script>
 
 
 

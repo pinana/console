@@ -49,87 +49,26 @@
         <div class="input-group">
         <tbody id="tasks-list" name="tasks-list">
 
-            <tr id="">
-                <td>actualpacs</td>
-                <td>actualpacs</td>
-                <td>190.843848</td>
-                <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
+        @foreach($aets as $aet)
+            <tr>
+
+                <td>{{$aet->description}}</td>
+                <td>{{$aet->AET}}</td>
+                <td>{{$aet->host}}</td>
+                <td>{{$aet->port}}</td>
+
+
                 <td>
                     <input type="radio" name="AETS" aria-label="...">
                 </td>
 
             </tr>
-            <tr id="">
-                <td>actualpacs</td>
-                <td>actualpacs</td>
-                <td>190.843848</td>
-                <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
-                <td>
-                    <input type="radio" name="AETS" aria-label="...">
-                </td>
-            </tr>
-            <tr id="">
-                <td>actualpacs</td>
-                <td>actualpacs</td>
-                <td>190.843848</td>
-                <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
-                <td>
-                    <input type="radio" name="AETS" aria-label="...">
-                </td>
-            </tr>
+            @endforeach
 
-            <tr id="">
-                <td>actualpacs</td>
-                <td>actualpacs</td>
-                <td>190.843848</td>
-                <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
-                <td>
-                    <input type="radio" name="AETS" aria-label="...">
-                </td>
 
-            </tr>
-            <tr id="">
-                <td>actualpacs</td>
-                <td>actualpacs</td>
-                <td>190.843848</td>
-                <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
-                <td>
-                    <input type="radio" name="AETS" aria-label="...">
-                </td>
-            </tr>
-            <tr id="">
-                <td>actualpacs</td>
-                <td>actualpacs</td>
-                <td>190.843848</td>
-                <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
-                <td>
-                    <input type="radio" name="AETS" aria-label="...">
-                </td>
-            </tr>
+
+
+
         </div>
         </tbody>
     </table>

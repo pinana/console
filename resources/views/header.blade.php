@@ -7,7 +7,7 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <!--  <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> -->
             <span class="sr-only">Toggle navigation</span>
         </a>
         <!-- Navbar Right Menu -->
@@ -16,14 +16,14 @@
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                     <!-- Menu toggle button -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="label label-success">4</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">You have 4 messages</li>
-                        <li>
-                            <!-- inner menu: contains the messages -->
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-envelope-o"></i>
+                          <span class="label label-success">4</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li class="header">You have 4 messages</li>
+                          <li>
+                              <!-- inner menu: contains the messages -->
                             <ul class="menu">
                                 <li><!-- start message -->
                                     <a href="#">

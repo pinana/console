@@ -54,10 +54,7 @@
                 <td>actualpacs</td>
                 <td>190.843848</td>
                 <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
+
                 <td>
                     <input type="radio" name="AETS" aria-label="...">
                 </td>
@@ -68,10 +65,7 @@
                 <td>actualpacs</td>
                 <td>190.843848</td>
                 <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
+
                 <td>
                     <input type="radio" name="AETS" aria-label="...">
                 </td>
@@ -81,10 +75,7 @@
                 <td>actualpacs</td>
                 <td>190.843848</td>
                 <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
+
                 <td>
                     <input type="radio" name="AETS" aria-label="...">
                 </td>
@@ -95,10 +86,7 @@
                 <td>actualpacs</td>
                 <td>190.843848</td>
                 <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
+
                 <td>
                     <input type="radio" name="AETS" aria-label="...">
                 </td>
@@ -109,10 +97,7 @@
                 <td>actualpacs</td>
                 <td>190.843848</td>
                 <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
+
                 <td>
                     <input type="radio" name="AETS" aria-label="...">
                 </td>
@@ -122,10 +107,7 @@
                 <td>actualpacs</td>
                 <td>190.843848</td>
                 <td>8080</td>
-                <td>
-                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
-                </td>
+
                 <td>
                     <input type="radio" name="AETS" aria-label="...">
                 </td>

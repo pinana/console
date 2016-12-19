@@ -26,7 +26,7 @@ Route::get('/tags', function () {
 
 
 Route::get('bootstrap', 'PagesController@bootstrap' );
-
+Route::get('dashboard', 'PagesController@bootstrap' );
 
 
 
