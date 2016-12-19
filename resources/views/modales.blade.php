@@ -189,7 +189,95 @@
 
         </div>
     </div>
-@stop
+    </div>
 
+@stop
+        @section('MODAL_EDITAR')
+            @foreach($aets as $aet)
+            <div id="modal-edit-{{$aet->id }}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">TAGS</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div clas="panel-heading">editar</div>
+                            {!! Form::model($aet, ['route'=>['datos.update', $aet->id],'method' =>'PUT']) !!}
+                            <div class="form-group">
+                                {!!  Form::label('description', 'Enter description') !!}
+                                {!!  Form::text('description', null,  ['class' => 'form-comtrol']) !!}
+
+                            </div>
+
+                            <div class="form-group">
+                                {!!  Form::label('AET', 'Enter AETS') !!}
+                                {!!  Form::text('AET', null,  ['class' => 'form-comtrol']) !!}
+
+                            </div>
+
+                            <div class="form-group">
+                                {!!  Form::label('host', 'Enter host') !!}
+                                {!!  Form::text('host', null,  ['class' => 'form-comtrol']) !!}
+
+                            </div>
+
+                            <div class="form-group">
+                                {!!  Form::label('port', 'port') !!}
+                                {!!  Form::text('port', null,  ['class' => 'form-comtrol']) !!}
+
+                            </div>
+
+                            <div class="form-group">
+                                {!!  Form::button('Create', ['type'=>'submit' , 'class'=>'btn btn primary']) !!}
+
+
+                            </div>
+
+
+
+
+
+                            {!! Form::close() !!}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">GUARGAR</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            @endforeach
+        @stop
+
+@section('MODAL_DELETE')
+    @foreach($aets as $aet)
+    <div id="MODAL_DELETE-{{$aet->id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">DELETE</h4>
+                </div>
+                <div class="modal-body">
+                    {!! Form::open(['method' => 'DELETE','route' => ['datos.destroy', $aet->id],'style'=>'display:inline']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">CONFIRMAR</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @endforeach
+@stop
 
 @stop

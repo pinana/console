@@ -57,7 +57,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content">
             <!-- Your Page Content Here -->
             @yield('content')
+
             @yield('MODAL_NODO')
+            @yield('MODAL_EDITAR')
+            @yield('MODAL_TAGS')
+            @yield('MODAL_DELETE')
+
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

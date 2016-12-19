@@ -28,4 +28,33 @@ class CardsController extends Controller
         return redirect()->route('datos.index')->with('message', 'iten ha sido añadido');
 
     }
+
+
+    public function edit($id)
+    {
+$aet= aets::find($id);
+        return view('datos.edit', compact('aet'));
+
+    }
+
+    public function update(Request $request, $id)
+    {
+        $aet= aets::find($id);
+        $aetupdate= $request->all();
+        $aet->update($aetupdate);
+        return redirect()->route('datos.index')->with('message', 'iten ha sido añadido');
+
+    }
+
+
+    public function destroy($id)
+    {
+        $aet = aets::findOrFail($id);
+
+        $aet->delete($id);
+
+
+
+        return redirect()->route('datos.index');
+    }
 }

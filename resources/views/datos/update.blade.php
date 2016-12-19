@@ -1,5 +1,5 @@
 <div clas="panel-heading">editar</div>
-{!! Form::model($aet, ['route'=>['datos.update', $aet->id],'method' =>'PUT']) !!}
+{!! Form::open(array('route'=> 'datos.store')) !!}
 <div class="form-group">
     {!!  Form::label('description', 'Enter description') !!}
 {!!  Form::text('description', null,  ['class' => 'form-comtrol']) !!}

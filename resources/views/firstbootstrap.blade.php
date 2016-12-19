@@ -413,9 +413,7 @@
 
 
 
-    @section('modales')
-        <!-- En modales.blade.php-->
-    @stop
+
 @section('footer')
     <p>&copy; 2016 www.hc-kr.com, Inc.</p>
 @stop

@@ -87,6 +87,10 @@
 
 
 </div> <!-- /container -->
+
+
+
+<!-- /MODALES -->
 @yield('modal_ENVIAR')
 @yield('modal_MOVER')
 @yield('modal_BORRAR')
@@ -119,7 +123,7 @@
 
     $("input[name=optradio]").change(function () {
 
-ping google.es
+
 
             alert("Yes it A");
 

@@ -1,5 +1,10 @@
 @extends('admin_template')
 @extends('modales')
+
+
+
+
+
 @section('content')
 
     <div class="row">
@@ -43,8 +48,11 @@
                                 <td>{{$aet->host}}</td>
                                 <td>{{$aet->port}}</td>
                                 <td>
-                                    <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
-                                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
+
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#MODAL_DELETE-{{$aet->id}}">DELETE</button>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-{{$aet->id}}">EDIT</button>
+                                    {{link_to_route('datos.edit', 'Edit',[$aet->id], ['class' =>'btn btn-primary']) }}
+
                                 </td>
                             </tr>
                             @endforeach
@@ -64,6 +72,7 @@
 
                     </button>
 
+
                 </div>
                 <!-- /.box-footer -->
             </div>
@@ -75,8 +84,6 @@
         <!-- /.col -->
     </div>
 
-@section('modales')
-    <!-- En modales.blade.php-->
-@stop
+
 
 @endsection
