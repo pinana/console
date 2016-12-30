@@ -51,6 +51,7 @@ body{ }
     z-index:-1;
 }
 
+.actions{margin-bottom:10px;}
 
 .patients .accordion-heading {  position: relative; }
 .patients .accordion-heading .edit {

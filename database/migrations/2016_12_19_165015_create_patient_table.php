@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAetsTable extends Migration
+class CreatePatientTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateAetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('aets', function (Blueprint $table) {
+
+
+        Schema::create('patient', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description');
-            $table->string('AET');
-            $table->string('host');
-            $table->string('port');
+            $table->string('patient');
+            $table->string('patient_id');
+
             $table->timestamps();
         });
-
-
     }
 
     /**
@@ -32,7 +31,7 @@ class CreateAetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('=aets');
 
+        Schema::dropIfExists('=patient');
     }
 }

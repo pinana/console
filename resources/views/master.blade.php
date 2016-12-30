@@ -85,18 +85,22 @@
                 </div>
             </div>
 
-            <div class="row g">
+            <div class="row patients">
                 <div class="col-lg-12 patients">
                     <div class="box">
                         <div class="box-header with-border">
+                            <div class="actions">
                             @yield('actions')
-
+                            </div>
+<div>
                             @yield('patients')
+</div>
 
-                        </div>
                     </div>
                 </div>
             </div>
+            </div>
+
 
 
 
