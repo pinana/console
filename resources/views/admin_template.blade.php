@@ -62,6 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             @yield('MODAL_EDITAR')
             @yield('MODAL_TAGS')
             @yield('MODAL_DELETE')
+            @yield('MODAL_PING')
 
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

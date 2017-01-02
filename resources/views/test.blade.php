@@ -51,6 +51,7 @@
 
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#MODAL_DELETE-{{$aet->id}}">DELETE</button>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-{{$aet->id}}">EDIT</button>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#MODAL_PING-{{$aet->id}}">ping</button>
 
 
                                 </td>

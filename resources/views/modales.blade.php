@@ -280,4 +280,31 @@
     @endforeach
 @stop
 
+
+@section('MODAL_PING')
+    @foreach($aets as $aet)
+        <div id="MODAL_PING-{{$aet->id}}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">PING</h4>
+                    </div>
+                    <div class="modal-body">
+                        {!! Form::open(['method' => 'PING','route' => ['datos.destroy', $aet->id],'style'=>'display:inline']) !!}
+                        {!! Form::submit('PING', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    @endforeach
+@stop
 @stop

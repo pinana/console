@@ -57,4 +57,16 @@ $aet= aets::find($id);
 
         return redirect()->route('datos.index');
     }
+
+
+    public function PING($id)
+    {
+        $aet = aets::findOrFail($id);
+
+        $aet->delete($id);
+
+
+
+        return redirect()->route('datos.index');
+    }
 }

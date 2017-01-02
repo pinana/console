@@ -32,6 +32,7 @@
                 <td>
                     <button class="btn btn-warning btn-xs btn-detail open-modal" value="">Edit</button>
                     <button class="btn btn-danger btn-xs btn-delete delete-task" value="">Delete</button>
+                    <button class="btn btn-danger btn-xs btn-delete delete-task" value="">ping</button>
                 </td>
                 <td>
 
