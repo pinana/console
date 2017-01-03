@@ -293,7 +293,7 @@
                         <h4 class="modal-title">PING</h4>
                     </div>
                     <div class="modal-body">
-                        {!! Form::open(['method' => 'PING','route' => ['datos.destroy', $aet->id],'style'=>'display:inline']) !!}
+                        {!! Form::open(['method' => 'PUT','route' => ['datos.destroy', $aet->id],'style'=>'display:inline']) !!}
                         {!! Form::submit('PING', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </div>

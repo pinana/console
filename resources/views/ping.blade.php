@@ -1,6 +1,15 @@
 @extends('master')
 @extends('modales')
-
+@section('header')
+    <nav>
+        <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <h3 class="text-muted">www.hc-kr.com</h3>
+@stop
 
 @section('sidebar-up')
     <form class="navbar-form navbar-left">
@@ -24,10 +33,6 @@
         </div>
         <button type="submit" class="btn btn-default">buscar</button>
     </form>
-
-
-    <a role="button" class="btn  btn-info btn-md pull-right config_nodos" href="/datos">config nodos<a/>
-
 @stop
 
 @section('sidebar-left')
@@ -35,37 +40,80 @@
         <thead>
         <tr>
             <th>Description</th>
-            <th>AETS</th>
+            <th>AET</th>
             <th>HOST</th>
             <th>port</th>
 
         </tr>
         </thead>
         <div class="input-group">
-            <tbody id="tasks-list" name="tasks-list">
+        <tbody id="tasks-list" name="tasks-list">
 
-            @foreach($aets as $aet)
-                <tr>
+            <tr id="">
+                <td>actualpacs</td>
+                <td>actualpacs</td>
+                <td>190.843848</td>
+                <td>8080</td>
 
-                    <td>{{$aet->description}}</td>
-                    <td>{{$aet->AET}}</td>
-                    <td>{{$aet->host}}</td>
-                    <td>{{$aet->port}}</td>
+                <td>
+                    <input type="radio" name="AETS" aria-label="...">
+                </td>
 
+            </tr>
+            <tr id="">
+                <td>actualpacs</td>
+                <td>actualpacs</td>
+                <td>190.843848</td>
+                <td>8080</td>
 
-                    <td>
-                        <input type="radio" name="AETS" aria-label="...">
-                    </td>
+                <td>
+                    <input type="radio" name="AETS" aria-label="...">
+                </td>
+            </tr>
+            <tr id="">
+                <td>actualpacs</td>
+                <td>actualpacs</td>
+                <td>190.843848</td>
+                <td>8080</td>
 
-                </tr>
-            @endforeach
+                <td>
+                    <input type="radio" name="AETS" aria-label="...">
+                </td>
+            </tr>
 
+            <tr id="">
+                <td>actualpacs</td>
+                <td>actualpacs</td>
+                <td>190.843848</td>
+                <td>8080</td>
 
+                <td>
+                    <input type="radio" name="AETS" aria-label="...">
+                </td>
 
+            </tr>
+            <tr id="">
+                <td>actualpacs</td>
+                <td>actualpacs</td>
+                <td>190.843848</td>
+                <td>8080</td>
 
-            </tbody>
+                <td>
+                    <input type="radio" name="AETS" aria-label="...">
+                </td>
+            </tr>
+            <tr id="">
+                <td>actualpacs</td>
+                <td>actualpacs</td>
+                <td>190.843848</td>
+                <td>8080</td>
+
+                <td>
+                    <input type="radio" name="AETS" aria-label="...">
+                </td>
+            </tr>
         </div>
-
+        </tbody>
     </table>
 
 @stop
@@ -177,74 +225,82 @@
     <tbody id="tasks-list" name="tasks-list">
     <div class="btn-group" >
     <table id ="table" class="table">
-
-
-
-
-
-
+        <thead>
         <tr>
-
-        <td><div class="checkbox">
-                <label><input type="checkbox" name="optradio">CT</label>
-            </div></td>
-        <td><div class="checkbox">
-                <label><input type="checkbox" name="optradio">CT</label>
-            </div></td>
-        <td><div class="checkbox">
-                <label><input type="checkbox" name="optradio">CT</label>
-            </div></td>
+           <th>#table</th>
 
 
         </tr>
 
-        <tr>
-
             <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
+                    <label><input type="checkbox" name="optradio">cualquier fecha</label>
                 </div></td>
             <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
+                    <label><input type="checkbox" name="optradio">mes pasado</label>
                 </div></td>
 
 
         </tr>
-
         <tr>
-
             <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
+                    <label><input type="checkbox" name="optradio">cualquier fecha</label>
                 </div></td>
             <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
+                    <label><input type="checkbox" name="optradio">mes pasado</label>
                 </div></td>
 
 
         </tr>
-
         <tr>
-
             <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
+                    <label><input type="checkbox" name="optradio">cualquier fecha</label>
                 </div></td>
             <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
+                    <label><input type="checkbox" name="optradio">mes pasado</label>
                 </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-
 
         </tr>
+        <tr>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">cualquier fecha</label>
+                </div></td>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">mes pasado</label>
+                </div></td>
+
+        </tr>
+
+        <tr>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">cualquier fecha</label>
+                </div></td>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">mes pasado</label>
+                </div></td>
+
+        </tr>
+        <tr>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">cualquier fecha</label>
+                </div></td>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">mes pasado</label>
+                </div></td>
+
+        </tr>
+        <tr>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">cualquier fecha</label>
+                </div></td>
+            <td><div class="checkbox">
+                    <label><input type="checkbox" name="optradio">mes pasado</label>
+                </div></td>
+        </thead>
+        </tr>
+        </tbody>
     </table>
         </div>
-    </tbody>
+
 
     <div class="row marketing">
         <div class="btn_modalitys btn-xs">

@@ -37,17 +37,7 @@
 
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                {{ $page_title or "Page Title" }}
-                <small>{{ $page_description or null }}</small>
-            </h1>
-            <!-- You can dynamically generate breadcrumbs here -->
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
-            </ol>
-        </section>
+
         <div class="header clearfix">
 
             @yield('sidebar-up')
@@ -57,10 +47,10 @@
         <section class="content">
             <!-- Your Page Content Here -->
             <div class="row">
-                <div class="col-md-5 nodos">
+                <div class="col-md-4 nodos">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Monthly Recap Report</h3>
+                            <h3 class="box-title">nodos</h3>
                             @yield('sidebar-left')
                         </div>
                     </div>
@@ -69,7 +59,7 @@
                 <div class="col-md-4 fechas">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Monthly Recap Report</h3>
+                            <h3 class="box-title">fechas</h3>
                             @yield('sidebar-fechas')
                         </div>
                     </div>
@@ -78,7 +68,8 @@
                 <div class="col-md-3 modalitys">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Monthly Recap Report</h3>
+
+
                             @yield('sidebar-modality')
                         </div>
                     </div>

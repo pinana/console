@@ -10,34 +10,39 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+rutas
+|
+*/
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
-Route::get('/tags', function () {
-    return view('tags');
-});
-
-
-
-
-
-
-
-Route::get('bootstrap', 'PagesController@bootstrap' );
 Route::get('dashboard', 'PagesController@bootstrap' );
-
-
-
-Auth::routes();
 
 Route::resource('datos', 'CardsController');
 
+Auth::routes();
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/home', 'HomeController@index');
 
-Route::get('admin', function () {
-    return view('admin_template');
-});
 
-Route::resource('test', 'CardsController');
+
+
+
+
+Route::get('ping', function()
+{
+    // Call and Artisan command from within your application.
+    return Artisan::call('ping:start');
+});

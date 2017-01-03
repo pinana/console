@@ -59,14 +59,12 @@ $aet= aets::find($id);
     }
 
 
-    public function PING($id)
+    public function PING()
     {
-        $aet = aets::findOrFail($id);
-
-        $aet->delete($id);
+        Artisan::call('ping:start');
 
 
 
-        return redirect()->route('datos.index');
+
     }
 }
