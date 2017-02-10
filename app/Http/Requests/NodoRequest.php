@@ -29,6 +29,10 @@ class NodoRequest extends FormRequest
             'AET' => 'required',
             'host' => 'required',
             'port' => 'required',
+            'TLS' => 'required',
+            'COMPRESION' => 'required',
+
+
         ];
     }
 }

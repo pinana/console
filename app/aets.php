@@ -16,7 +16,7 @@ class aets extends Model
      * @var array
      */
     protected $fillable = [
-        'description', 'AET', 'host', 'port'
+        'description', 'AET', 'host', 'port', 'TLS', 'COMPRESION',
     ];
 
     /**

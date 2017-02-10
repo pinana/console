@@ -17,6 +17,8 @@
             <th>AET</th>
             <th>HOST</th>
             <th>port</th>
+            <th>TLS</th>
+            <th>port</th>
 
         </tr>
         </thead>

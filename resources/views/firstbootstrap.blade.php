@@ -3,30 +3,111 @@
 
 
 @section('sidebar-up')
-    <form class="navbar-form navbar-left">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="ID">
-            <input type="text" class="form-control" placeholder="name">
-            <input type="text" class="form-control" placeholder="AN">
-            <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tag <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Tag1</a></li>
-                        <li><a href="#">tag2</a></li>
-                        <li><a href="#">Tag3</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                    <input type="text" class="form-control" placeholder="Tags">
-                </div><!-- /btn-group -->
-            </div>
-        </div>
-        <button type="submit" class="btn btn-default">buscar</button>
-    </form>
+
+    <div class="col-md-12">
+        <form class="">
+            <div class="form-group">
+
+                <div class="col-md-1" >
+                 <input type="text" class="form-control" placeholder="ID">
+                </div>
+
+                <div class="col-md-1" >
+                    <input type="text" class="form-control" placeholder="AN">
+                </div>
+
+                <div class="col-md-1" >
+                    <input type="text" class="form-control" placeholder="NAME">
+                </div>
+
+                <div class="col-md-2 tag_col" >
+                <div class="input-group">
+
+                    <div class="col-md-6 tags" >
+
+                            <input type="text" class="form-control" placeholder="Tags">
+                    </div>
+                    <div class="col-md-6 tags" >
+                        <select id="my-se" name="my-se" multiple="multiple">
+                            <option value="CT">CT</option>
+                            <option value="CT">CT</option>
+                            <option value="CT">CT</option>
+                            <option value="CT">CT</option>
+                            <option value="CT">CT</option>
+                            <option value="CT">CT</option>
+                            <option value="CT">CT</option>
+                        </select>
+                    </div>
 
 
-    <a role="button" class="btn  btn-info btn-md pull-right config_nodos" href="/datos">config nodos<a/>
+
+
+
+
+                </div>
+                </div>
+
+
+
+                <div class="col-md-2" >
+                    <select id="my-select" name="character" multiple="multiple">
+                        <option value="CT">CT</option>
+                        <option value="CT">CT</option>
+                        <option value="CT">CT</option>
+                        <option value="CT">CT</option>
+                        <option value="CT">CT</option>
+                        <option value="CT">CT</option>
+                        <option value="CT">CT</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md-2" >
+
+
+                    <div class="form-group">
+
+
+                        <div class="input-group">
+                            <button type="button" class="btn btn-default pull-right" id="daterange-btn">
+                    <span>
+                      <i class="fa fa-calendar"></i> Fecha
+                    </span>
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                        </div>
+                    </div>
+</div>
+
+                <div class="col-md-2" >
+                    <a role="button" class="btn  btn-info btn-md pull-right config_nodos" href="/datos">buscar</a>
+</div>
+                </div>
+
+
+
+
+            </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @stop
 
@@ -41,8 +122,8 @@
 
         </tr>
         </thead>
-        <div class="input-group">
-            <tbody id="tasks-list" name="tasks-list">
+        <div class="input-group" multiple="multiple">
+            <tbody id="tasks-list" name="tasks-list" multiple="multiple">
 
             @foreach($aets as $aet)
                 <tr>
@@ -54,7 +135,7 @@
 
 
                     <td>
-                        <input type="radio" name="AETS" aria-label="...">
+                        <input type="radio" name="AETS" multiple="multiple"  aria-label="...">
                     </td>
 
                 </tr>
@@ -71,213 +152,70 @@
 @stop
 @section('sidebar-fechas')
 
-    <tbody id="tasks-list" name="tasks-list">
 
-    <table class="table">
-        <div class="input-group">
-            <tr>
-        <thead>
 
-            <td><div class="radio">
-                <label><input type="radio" name="optradio">cualquier fecha</label>
-            </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">mes pasado</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio"><30m</label>
-                </div></td>
-        </thead>
-        </tr>
-        <tr>
-            <thead>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">cualquier fecha</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">mes pasado</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio"><30m</label>
-                </div></td>
-            </thead>
-        </tr>
-        <tr>
-            <thead>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">cualquier fecha</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">mes pasado</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio"><30m</label>
-                </div></td>
-            </thead>
-        </tr>
-        <tr>
-            <thead>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">cualquier fecha</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">mes pasado</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio"><30m</label>
-                </div></td>
-            </thead>
-        </tr>
 
-        <tr>
-            <thead>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">cualquier fecha</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="date" name="optradio">date</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio"><30m</label>
-                </div></td>
-            </thead>
-        </tr>
-        <tr>
-            <thead>
-            <td><div class="radio">
-                    <label><input id="datecheck" type="radio" name="optradio">fecha concreta</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input id="date"  type="date" name="optradio">date</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio"><30m</label>
-                </div></td>
-            </thead>
-        </tr>
-        <tr>
-            <thead>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">cualquier fecha</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio">date</label>
-                </div></td>
-            <td><div class="radio">
-                    <label><input type="radio" name="optradio"><30m</label>
-                </div></td>
-            </thead>
-        </tr>
-    </div>
-</tbody>
-        </table>
 @stop
 
 @section('sidebar-modality')
-    <tbody id="tasks-list" name="tasks-list">
-    <div class="btn-group" >
-    <table id ="table" class="table">
 
 
 
 
-
-
-        <tr>
-
-        <td><div class="checkbox">
-                <label><input type="checkbox" name="optradio">CT</label>
-            </div></td>
-        <td><div class="checkbox">
-                <label><input type="checkbox" name="optradio">CT</label>
-            </div></td>
-        <td><div class="checkbox">
-                <label><input type="checkbox" name="optradio">CT</label>
-            </div></td>
-
-
-        </tr>
-
-        <tr>
-
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-
-
-        </tr>
-
-        <tr>
-
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-
-
-        </tr>
-
-        <tr>
-
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-            <td><div class="checkbox">
-                    <label><input type="checkbox" name="optradio">CT</label>
-                </div></td>
-
-
-        </tr>
-    </table>
-        </div>
-    </tbody>
-
-    <div class="row marketing">
-        <div class="btn_modalitys btn-xs">
-
-            <button id="toggle-all" class="btn btn-info">Select All</button>
-            <button id="untoggle-all" class="btn btn-info">deSelect All</button>
-
-        </div>
-    </div>
     @stop
 
     @section('patients')
 
 
         <div class="row marketing">
+
             <div class="accordion">
                 <div class="accordion-group">
 
-                    <div class="accordion-heading level1">
-                        <a class="accordion-toggle" data-toggle="collapse" href="#estudios">JUAN ATUN DEL MAR</a>
+                    <div class="accordion-heading level1 ">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>NAME</th>
+                                    <th> PATIENT</th>
 
+
+                            </tr>
+                            </thead>
+                        <tr>
+                       <td><a id="button" type="" class="" data-toggle="collapse" data-target="#estudios">
+                               <span class="glyphicon glyphicon-collapse-down"></span>
+                           </a>
+
+                           <span>Juan solo</span></td>
+                        <td><span>1234563445</span></td>
+
+
+                            <td><button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-trash"></span></button>
+                             <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-download"></span></button>
+                            <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-edit"></span></button></td>
+                        </tr>
+</table>
                     </div>
                 </div>
 
                 <div class="accordion-body collapse" id="estudios">
                     <div class="accordion-inner">
+
                         <div class="accordion" id="LEVEL2">
                             <div class="accordion-group">
                                 <div class="accordion-heading level2">
-                                    <a class="accordion-toggle" data-parent="#serie" data-toggle="collapse" href="#serie">
-                                        ESTUDIO ALETA</a>
-
-
+                                    <table class="table">
+                                    <td><a id="button1" type="" class="" data-toggle="collapse" data-target="#serie">
+                                        <span class="glyphicon glyphicon-collapse-down"></span>
+                                    </a>
+                                    <span>
+                                        ESTUDIO ALETA</span></td>
+                                   <td><button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-trash"></span></button>
+                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-download"></span></button>
+                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-edit"></span></button>
+</td>
+                                    </table>
                                 </div>
 
                                 <div class="accordion-body collapse" id="serie">
@@ -285,11 +223,46 @@
                                         <div class="accordion" id="LEVEL3">
                                             <div class="accordion-group">
                                                 <div class="accordion-heading level3">
-                                                    <a class="accordion-toggle" data-parent="#LEVEL3" data-toggle="collapse" href="#serie">
-                                                        serie 1</a>
-
+                                                    <a id="button2" type="" class="" data-toggle="collapse" data-target="#imagenes">
+                                                        <span class="glyphicon glyphicon-collapse-down"></span>
+                                                    </a>
+                                                    <span>
+                                       serie 1</span>
+                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-trash"></span></button>
+                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-download"></span></button>
+                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-edit"></span></button>
 
                                                 </div>
+
+                                                <div class="accordion-body collapse" id="imagenes">
+                                                    <div class="accordion-inner">
+                                                        <div class="accordion" id="LEVEL4">
+                                                            <div class="accordion-group">
+                                                                <div class="accordion-heading level4">
+                                                                    <a class="accordion-toggle" data-parent="#LEVEL4" data-toggle="collapse" href="#imagenes">
+                                                                        imagen1</a>
+                                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-trash"></span></button>
+                                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-download"></span></button>
+                                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-edit"></span></button>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="accordion-group">
+                                                                <div class="accordion-heading level4">
+                                                                    <a class="accordion-toggle" data-parent="#LEVEL4" data-toggle="collapse" href="#imagenes">
+                                                                        imagen2</a>
+                                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-trash"></span></button>
+                                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-download"></span></button>
+                                                                    <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#MODAL_DOWNLOAD"><span class="glyphicon glyphicon-edit"></span></button>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
 
                                             </div>
                                         </div>
@@ -297,45 +270,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion" id="LEVEL2.1">
-                            <div class="accordion-group">
-                                <div class="accordion-heading level2">
-                                    <a class="accordion-toggle" data-parent="#serie" data-toggle="collapse" href="#serie1">
-                                        ESTUDIO COLA</a>
 
-
-                                </div>
-
-                                <div class="accordion-body collapse" id="serie1">
-                                    <div class="accordion-inner">
-                                        <div class="accordion" id="LEVEL3.1">
-                                            <div class="accordion-group">
-                                                <div class="accordion-heading level3">
-                                                    <a class="accordion-toggle" data-parent="#LEVEL3.1" data-toggle="collapse" href="#serie1">
-                                                        SERIE1 ESTUDIO COLA</a>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
         </div>
     @stop
     @section('actions')
-        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">ENVIAR</button>
-        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#MODAL_TAGS">TAGS</button>
-        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#MODAL_BORRAR">MODAL_BORRAR</button>
-        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#MODAL_MOVER">MOVER</button>
-        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#MODAL_DOWNLOAD">download</button>
+        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">EXPORTAR</button>
+        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">IMPORTAR</button>
+
+
+
+
     @stop
+
+
 
 
 

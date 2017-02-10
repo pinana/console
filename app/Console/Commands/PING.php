@@ -7,6 +7,8 @@ use Illuminate\Console\Commands;
 
 class PING extends Command
 {
+
+
     /**
      * The name and signature of the console command.
      *
@@ -20,15 +22,17 @@ class PING extends Command
      * @var string
      */
     protected $description = 'ping check';
-
+    protected $prueba;
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(prueba $prueba)
+
     {
         parent::__construct();
+        $this->prueba = $prueba;
     }
 
     /**
@@ -38,7 +42,7 @@ class PING extends Command
      */
     public function handle()
     {
-        $this->info("Thanks for do the quiz in the console, your answers : ");
+$exit='fdhfshj';
 
     }
 }

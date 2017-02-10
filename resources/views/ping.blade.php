@@ -1,6 +1,8 @@
 @extends('master')
 @extends('modales')
 @section('header')
+    <p>
+
     <nav>
         <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Home</a></li>

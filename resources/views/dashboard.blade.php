@@ -25,11 +25,12 @@
                         <li><a href="#">tag2</a></li>
                         <li><a href="#">Tag3</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">Separted link</a></li>
                     </ul>
                     <input type="text" class="form-control" placeholder="Tags">
                 </div><!-- /btn-group -->
             </div>
+
         </div>
         <button type="submit" class="btn btn-default">buscar</button>
     </form>

@@ -9,7 +9,7 @@
 
     <div class="row">
         <!-- Left col -->
-        <div class="col-md-8">
+        <div class="col-md-12">
             <!-- MAP & BOX PANE -->
 
 
@@ -37,16 +37,29 @@
                                 <th>AET</th>
                                 <th>HOST</th>
                                 <th>port</th>
+                                <th>TLS</th>
+                                <th>COMPRESION</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($aets as $aet)
+
+
                             <tr>
                                 <td>{{$aet->id}}</td>
                                 <td>{{$aet->description}}</td>
                                 <td>{{$aet->AET}}</td>
                                 <td>{{$aet->host}}</td>
                                 <td>{{$aet->port}}</td>
+                                <td>@if(($aet->TLS) ==1) YES
+                                    @else NO
+                                    @endif</td>
+
+                                <td>
+                                    {{$aet->COMPRESION}}
+
+                                    </td>
+
                                 <td>
 
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#MODAL_DELETE-{{$aet->id}}">DELETE</button>

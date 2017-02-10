@@ -43,6 +43,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('ping', function()
 {
-    // Call and Artisan command from within your application.
-    return Artisan::call('ping:start');
+
+    $prueba = Artisan::call('ping:start');
+    $exit= var_dump($prueba);
+    return $exit;
 });

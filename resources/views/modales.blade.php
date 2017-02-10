@@ -12,15 +12,21 @@
                 <div class="modal-body">
                     <p>select AETS</p>
                     <select class="selectpicker">
-                        <option>PAC1</option>
-                        <option>PACS2</option>
-                        <option>PACS3</option>
-                    </select>
+                        @foreach($aets as $aet)
+                            <option>{{$aet->description}}</option>
+
+
+                        @endforeach
+                            <select>
+
+
+
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">ENVIAR</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">ENVIAR</button>
+
+
                 </div>
             </div>
 
@@ -41,8 +47,8 @@
                     <p>TAGS</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">GUARGAR</button>
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">GUARGAR</button>
                 </div>
             </div>
 
@@ -63,8 +69,8 @@
                     <p>BORRAR</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">BORRAR</button>
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">BORRAR</button>
                 </div>
             </div>
 
@@ -85,8 +91,8 @@
                     <p>MOVER</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">MOVER</button>
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">MOVER</button>
                 </div>
             </div>
 
@@ -107,8 +113,8 @@
                     <p>DOWNLOAD</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">DOWNLOAD</button>
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">DOWNLOAD</button>
                 </div>
             </div>
 
@@ -157,7 +163,16 @@
                                                         {!!  Form::text('port', null,  ['class' => 'form-comtrol']) !!}
 
                                                     </div></td>
+                                                <td><div class="form-group">
+                                                        {!!  Form::label('TLS', 'TLS') !!}
+                                                        {!!  Form::select('TLS', array('0' => 'NO', '1' => 'YES'), 'S') !!}
 
+                                                    </div></td>
+                                                <td><div class="form-group">
+                                                        {!!  Form::label('COMPRESION', 'COMPRESION') !!}
+
+                                                        {!!  Form::select('COMPRESION', array( 'INDIAN' =>'INDIAN' , 'INDIAN2' => 'INDIAN2'), $aet->COMPRESION) !!}
+                                                    </div></td>
 
                                             </tr>
 
@@ -226,9 +241,36 @@
 
                             <div class="form-group">
                                 {!!  Form::label('port', 'port') !!}
-                                {!!  Form::text('port', null,  ['class' => 'form-comtrol']) !!}
+                                {!!  Form::text('port', null,  ['class' => 'form-comtrol', 'data-inputmask'=> "'alias': 'ip'", 'data-mask']) !!}
 
                             </div>
+
+
+                           <div class="form-group">
+                                    {!!  Form::label('TLS', 'TLS') !!}
+
+
+
+
+                                    {!!  Form::select('TLS', array( 0 =>'No' , '1' => 'YES'), $aet->TLS) !!}
+                           </div>
+
+
+                            <div class="form-group">
+                                {!!  Form::label('COMPRESION', 'COMPRESION') !!}
+
+
+
+
+                                {!!  Form::select('COMPRESION', array( 'INDIAN' =>'INDIAN' , 'INDIAN2' => 'INDIAN2'), $aet->COMPRESION) !!}
+                            </div>
+
+
+
+
+
+
+
 
                             <div class="form-group">
                                 {!!  Form::button('Create', ['type'=>'submit' , 'class'=>'btn btn primary']) !!}
@@ -244,7 +286,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">GUARGAR</button>
+
                         </div>
                     </div>
 

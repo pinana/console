@@ -2,7 +2,7 @@ body{ }
 
 .nodos {
 
-    
+
 
     /* width: 100%; */
     height: 330px;
@@ -13,12 +13,22 @@ body{ }
     font-size:0.8em;
 
 }
-
+ .nodos .box{
+     background-color:#E0ECF8;;
+ }
 
 .fechas{
     height: 330px;
 
 
+}
+
+.fechas .box{
+    background-color:#E0ECF8;;
+}
+
+.modalitys .box{
+    background-color:#E0ECF8;;
 }
 
 .fechas .radio{
@@ -53,16 +63,26 @@ body{ }
 
 .actions{margin-bottom:10px;}
 
+.patients .box-header{background-color:#E0ECF8;}
+
 .patients .accordion-heading {  position: relative; }
 .patients .accordion-heading .edit {
     position: absolute;
     top: 8px;
     right: 30px;
 }
-.patients .level1 { margin-left: 0px ;background-color: #f38787; }
-.patients .level2 { margin-left: 5px ;background-color:  #65c465; }
-.patients .level3 { margin-left: 10px ;background-color:  #98b3fa; }
+.patients .level1 { margin-left: 10px; border-bottom: solid 0.2px grey; background-color:#CEE3F6;  padding: 5px; }
+.patients .level1 .table { margin-bottom: 0px;}
+.patients .level2 .btn-xs { margin-right:5px; }
+.patients .level2 { margin-left: 15px; padding: 5px; }
+.patients .level2 .table { margin-bottom: 0px;}
+.patients .level3 { margin-left: 20px; padding: 5px;  }
+.patients .level3 .btn-xs { margin-right: 5px; }
+.patients .level4 { margin-left: 20px; padding: 5px;  }
+.patients .level4 .btn-xs { margin-right: 5px; }
 .patients .collapse.in { overflow: visible; }
+
+.patients .level1 a { color:black;  }
 
 .content-wrapper{
 
@@ -86,3 +106,14 @@ body{ }
     margin-top:10px;
     margin-right:20px;
 }
+
+.search_menu{background-color:#F2F2F2;}
+
+.modal-content {background-color:#E0ECF8;;}
+
+.btn-xs {
+    margin-right: 5px;
+}
+
+.tag_col .input-group{display:flex;}
+.tags{padding: 0px;}
