@@ -74,7 +74,9 @@ body{ }
 .patients .level1 { margin-left: 10px; border-bottom: solid 0.2px grey; background-color:#CEE3F6;  padding: 5px; }
 .patients .level1 .table { margin-bottom: 0px;}
 .patients .level2 .btn-xs { margin-right:5px; }
-.patients .level2 { margin-left: 15px; padding: 5px; }
+.patients .level2 {margin-left:15px;
+    background-color: palegoldenrod;
+     }
 .patients .level2 .table { margin-bottom: 0px;}
 .patients .level3 { margin-left: 20px; padding: 5px;  }
 .patients .level3 .btn-xs { margin-right: 5px; }
@@ -101,6 +103,48 @@ body{ }
     padding:5px;
 
 }
+
+
+
+.table>tbody>tr>td{
+    padding:2px;
+}
+.table-studies>tbody>tr>td {
+    padding-left:13px;
+}
+
+#th-studies>th {
+    padding-left:15px;
+    background-color: palegoldenrod;
+    margin-left:200px;
+}
+
+#tr-studies>td {
+    padding-left:15px;
+    background-color: palegoldenrod;
+    margin-left:200px;
+}
+
+#table-studies>td {
+    padding-left:15px;
+    background-color: palegoldenrod;
+    margin-left:200px;
+}
+
+#table-studies>tr {
+    padding-left:15px;
+    background-color: palegoldenrod;
+    margin-left:200px;
+}
+.box-body {
+
+    height: 250px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 5px;
+
+}
+
 
 .config_nodos{
     margin-top:10px;

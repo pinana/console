@@ -25,6 +25,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/select2.min.css")}}" rel="stylesheet" type="text/css" >
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/sol.css")}}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset("/bower_components/AdminLTE/dist/css/all.css")}}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset("/bower_components/AdminLTE/dist/css/red.css")}}" rel="stylesheet" type="text/css" >
 </head>
 <body>
 
@@ -96,7 +98,21 @@
 
 
         </section><!-- /.content -->
+        <div class="row patients">
+            <div class="col-lg-12 patients">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <div class="actions">
+                            @yield('actions')
+                        </div>
+                        <div>
+                            @yield('footer')
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </div>
@@ -117,6 +133,8 @@
 <!-- Bootstrap 3.3.2 JS -->
 <script src="{{ asset ("bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
 <!-- AdminLTE App -->
+
+<script src="{{ asset ("bower_components/AdminLTE/dist/js/jquery.dataTables.min.js") }}" type="text/javascript"></script>
 <script src="{{ asset ("bower_components/AdminLTE/dist/js/app.min.js") }}" type="text/javascript"></script>
 
 <script src="{{ asset ("bower_components/AdminLTE/dist/js/bootstrap-multiselect.js") }}" type="text/javascript"></script>
@@ -137,6 +155,8 @@
 <script src="{{ asset ("bower_components/AdminLTE/dist/js/icheck.min.js") }}" type="text/javascript"></script>
 <script src="{{ asset ("bower_components/AdminLTE/dist/js/bootstrap-colorpicker.js") }}" type="text/javascript"></script>
 <script src="{{ asset ("bower_components/AdminLTE/dist/js/bootstrap-timepicker.js") }}" type="text/javascript"></script>
+<script src="{{ asset ("bower_components/AdminLTE/dist/js/dataTables.bootstrap.min.js") }}" type="text/javascript"></script>
+
 </body>
 <script>
     $('#toggle-all').click(function() {
@@ -264,6 +284,11 @@
             });
 
 
+    $(function() {
+        // initialize sol
+        $('#my-selett').searchableOptionList();
+    });
+
 
 
     $(function() {
@@ -310,6 +335,56 @@
         })
     })
 
+
+    $(function () {
+
+        $('#example1').DataTable({
+
+            "lengthChange": false,
+            "searching": true,
+            "ordering": false,
+            "info": false,
+            "autoWidth": false,
+
+            "paginate": false,
+            "language": {
+                     "search": ""
+            }
+        });
+    });
+//collapse all from patient
+    $('.closeall').click(function(){
+        $('.collapse.in')
+                .collapse('hide');
+    });
+
+
+//close above level from from studies
+    $('.closepps').click(function(){
+        $('#pps')
+                .collapse('hide');
+        $('#estudi3')
+                .collapse('hide');
+
+        $('.file')
+                .collapse('hide');
+    });
+
+    //close all levels above serie from  studies
+    $('.closeserie').click(function(){
+
+        $('#estudi3')
+                .collapse('hide');
+
+        $('.file')
+                .collapse('hide');
+    });
+    //close all levels  above image from  series
+    $('.closeinstance').click(function(){
+
+        $('.file')
+                .collapse('hide');
+    });
 </script>
 
 
