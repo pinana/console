@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\NodoRequest;
+use Ping;
+use Artisan;
 
 class CardsController extends Controller
 {
@@ -59,9 +61,13 @@ $aet= aets::find($id);
     }
 
 
-    public function PING()
+    public function cuestionario()
     {
-        Artisan::call('ping:start');
+
+        $exitCode = Artisan::call('quiz:start', [
+            'user' => 'Carlos', '--difficulty' => 'hard'
+        ]);
+var_dump($exitCode);
 
 
 

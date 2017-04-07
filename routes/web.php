@@ -41,10 +41,8 @@ Route::get('/home', 'HomeController@index');
 
 
 
-Route::get('ping', function()
-{
+Route::get('cuestionario', 'CardsController@cuestionario');
 
-    $prueba = Artisan::call('ping:start');
-    $exit= var_dump($prueba);
-    return $exit;
-});
+
+Route::get('/', 'searchcontroller@search');
+Route::get('/', 'searchcontroller@aets');

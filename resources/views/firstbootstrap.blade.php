@@ -5,37 +5,38 @@
 @section('sidebar-up')
 
     <div class="col-md-12">
-        <form class="">
+
+        {{ Form::open(array('method' =>'GET','url'=>action('searchcontroller@search'))) }}
+
             <div class="form-group">
 
                 <div class="col-md-1" >
-                 <input type="text" class="form-control" placeholder="ID">
+                 <input type="text" name="ID" class="form-control" placeholder="ID">
                 </div>
 
                 <div class="col-md-1" >
-                    <input type="text" class="form-control" placeholder="AN">
+                    <input type="text" name="AN" class="form-control" placeholder="AN">
                 </div>
 
                 <div class="col-md-1" >
-                    <input type="text" class="form-control" placeholder="NAME">
+                    <input type="text" name="NAME" class="form-control" placeholder="NAME">
                 </div>
 
                 <div class="col-md-2 tag_col" >
                 <div class="input-group">
 
-                    <div class="col-md-6 tags" >
+                    <div class="col-md-5 tags" >
 
-                            <input type="text" class="form-control" placeholder="Tags">
+                            <input type="text" name="Tags" class="form-control" placeholder="Tags">
                     </div>
-                    <div class="col-md-6 tags" >
+                    <div class="col-md-7 tags" >
                         <select id="my-se" name="my-se" multiple="multiple">
-                            <option value="CT">CT</option>
-                            <option value="CT">CT</option>
-                            <option value="CT">CT</option>
-                            <option value="CT">CT</option>
-                            <option value="CT">CT</option>
-                            <option value="CT">CT</option>
-                            <option value="CT">CT</option>
+                            <option name="tag" value="DESCRIPTION">DESCRIPTION</option>
+                            <option name="tag" value="CT">NAME</option>
+                            <option name="tag"value="CT">UID</option>
+                            <option name="tag" value="CT">STUDY NUMBER</option>
+                            <option name="tag" value="CT">PATIENT ID</option>
+
                         </select>
                     </div>
 
@@ -50,14 +51,14 @@
 
 
                 <div class="col-md-2" >
-                    <select id="my-select" name="character" multiple="multiple">
-                        <option value="CT">CT</option>
-                        <option value="CT">CT</option>
-                        <option value="CT">CT</option>
-                        <option value="CT">CT</option>
-                        <option value="CT">CT</option>
-                        <option value="CT">CT</option>
-                        <option value="CT">CT</option>
+                    <select id="my-select" name="modality" multiple="multiple">
+                        <option name="modality" value="CT">CT</option>
+                        <option name="modality" value="CT">xm</option>
+                        <option name="modality" value="CT">CT</option>
+                        <option name="modality" value="CT">CT</option>
+                        <option name="modality" value="CT">CT</option>
+                        <option name="modality" value="CT">CT</option>
+                        <option name="modality" value="CT">CT</option>
                     </select>
                     </div>
 
@@ -65,34 +66,33 @@
 
 
                     <div class="form-group">
-
-
-                        <div class="input-group">
-                            <button type="button" class="btn btn-default pull-right" id="daterange-btn">
-                    <span>
-                      <i class="fa fa-calendar"></i> Fecha
-                    </span>
-                                <i class="fa fa-caret-down"></i>
-                            </button>
+                        <input type="text" value="" id="inputstart" name="start" hidden />
+                        <input type="text" value="" id="inputend" name="end" hidden />
+                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                           <span></span> <b class="caret"></b>
                         </div>
+
+
+
+
                     </div>
 </div>
 
                 <div class="col-md-2" >
-                    <a role="button" class="btn  btn-info btn-md pull-right config_nodos" href="/datos">buscar</a>
+                    <div>
+                        {{Form::submit('Search', array('class' => 'btn')) }}
+                    </div>
+                    {{ Form::close() }}
 </div>
                 </div>
 
 
 
 
-            </form>
+
+
     </div>
-
-
-
-
-
 
 
 
@@ -115,6 +115,10 @@
 
 
 @section('sidebar-left')
+            <div id="checkboxlist">
+
+
+
     <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
@@ -122,24 +126,26 @@
             <th>AETS</th>
             <th>HOST</th>
             <th>port</th>
-            <th></th>
+
+
 
         </tr>
         </thead>
         <div class="input-group box_nodos" multiple="multiple">
             <tbody id="tasks-list" name="tasks-list" multiple="multiple">
-            <div class="col-md-12" >
-
-
+            <div class="col-md-12"  >
+                {{ Form::open(array('method' =>'GET','url'=>action('searchcontroller@aets'))) }}
             @foreach($aets as $aet)
+
                 <tr>
+
 
                     <td>{{$aet->description}}</td>
                     <td>{{$aet->AET}}</td>
                     <td>{{$aet->host}}</td>
                     <td>{{$aet->port}}</td>
-                    <td> <input type="checkbox" class="flat-red"></td>
-
+                    <td> {{ Form::checkbox('ch[]', ($aet->id . $aet->description), false) }}</td>
+                    <td> <input type="checkbox"  name="ch[]" value="{{$aet->description}}" false  id="checkboxlist"></td>
 
 
 
@@ -147,18 +153,21 @@
                 </tr>
 
             @endforeach
-
-
+                {!! Form::submit('Click Me!') !!}
+                {!! Form::close() !!}
             </div>
 
 
 
 
+
+
             </tbody>
+
         </div>
 
     </table>
-
+            </div>
 @stop
 
 
@@ -178,6 +187,9 @@
 
     @section('patients')
 
+
+        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">EXPORTAR</button>
+        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">IMPORTAR</button>
         <table class="table">
             <thead align="left" valign="top" id="id4f" title="">
             <tr class="patient" title="">
@@ -232,7 +244,7 @@
             </tr>
 
             <tr class="series collapse" title="" id="estudi3">
-                <td rowspan="3" class="expand" title="">
+                <td rowspan="2" class="expand" title="">
                     <a id="button2" type="" class="closeinstance" data-toggle="collapse" data-target=".file">
                         <span class="glyphicon glyphicon-collapse-down"></span>
                     </a>
@@ -245,9 +257,7 @@
                 <th>#I</th>
                 <th>Availability</th>
                 <th colspan="6"></th>
-                <th>
 
-                </th>
             </tr>
             <tr class="file collapse"  title="">
                 <th colspan="1">Instance Date/Time</th>

@@ -19,7 +19,7 @@
     -->
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-purple.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/bootstrap-multiselect.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -27,6 +27,14 @@
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/sol.css")}}" rel="stylesheet" type="text/css" >
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/all.css")}}" rel="stylesheet" type="text/css" >
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/red.css")}}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <script>
+        $('.datepicker').datepicker({
+            format: "dd/mm/yyyy",
+            language: "es",
+            autoclose: true
+        });
+    </script>
 </head>
 <body>
 
@@ -50,12 +58,28 @@
 
         </div>
         <section class="content">
+            <div class="row boton_nodos_sh">
+                <div class="col-md-1">
+            <div id=show_checked-nodes>
+                <button href="#Nodesbox" value="Get Value Using Parent Tag" id="buttonParent" data-toggle="collapse" class="btn btn-default btn-lg">
+                    Nodos <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                </button>
+            </div>
+                </div>
+                    <div class="col-md-3" >
+                        <div id="show_nodes"><li></li></div>
+                    </div>
+
+
+            </div>
+
+
             <!-- Your Page Content Here -->
             <div class="row search_menu">
 
 
                 <div class="col-md-3">
-                    <div class="box box-warning box-solid">
+                    <div class="box box-warning box-solid collapse" id="Nodesbox">
                         <div class="box-header with-border">
                             <h3 class="box-title">Nodos</h3>
 
@@ -66,7 +90,7 @@
                             <!-- /.box-tools -->
                         </div>
                         <!-- /.box-header -->
-                        <div class="box-body" style="display: block;">
+                        <div class="box-body" id="nodos" style="display: block;">
                             @yield('sidebar-left')
                         </div>
                         <!-- /.box-body -->
@@ -98,6 +122,8 @@
 
 
         </section><!-- /.content -->
+
+
         <div class="row patients">
             <div class="col-lg-12 patients">
                 <div class="box">
@@ -117,6 +143,7 @@
 
     </div>
 </div>
+
 </body>
 
 
@@ -159,6 +186,84 @@
 
 </body>
 <script>
+
+//get nodes checj and show div when div nodes is hidden
+
+    $(document).ready(function(){
+
+
+
+
+        $("#buttonParent").click(function() {
+
+            getValueUsingParentTag();
+
+
+
+        });
+
+        function getValueUsingParentTag() {
+            var chkArray = [];
+
+
+            /* look for all checkboes that have a parent id called 'checkboxlist' attached to it and check if it was checked */
+            $("#checkboxlist input:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join(', ') + ", ";
+
+
+            if (!$("#Nodesbox").hasClass("in"))  {
+            $("#buttonParent").animate({
+                left: "-100px",
+            }, 200 );
+                $( "#show_nodes" ).fadeTo( "slow" , 0.0)
+                document.getElementById("show_nodes").innerHTML = "";
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+
+
+
+
+        }
+            else {
+
+                if ( ($("#Nodesbox").hasClass("in")) && (chkArray.length > 0)  )  {
+                    alert("You have selected " + selected);
+
+                    $( "#show_nodes" ).fadeTo( "slow" , 100)
+                    document.getElementById("show_nodes").innerHTML ="Nodos: " +  selected ;
+
+                }
+
+                else if ( (!$("#Nodesbox").hasClass("in")))  {
+                    document.getElementById("show_nodes").innerHTML = "";
+                }
+
+else {
+                    alert ("gkfk");
+                };
+                $("#buttonParent").animate({
+                    left: "-30px",
+                }, 200 );
+
+            }
+}
+
+
+    });
+
+
+
+
+//
+
+
+
+
     $('#toggle-all').click(function() {
         $('.btn-group input[type="checkbox"]').prop('checked', true);
     });
@@ -226,23 +331,42 @@
         //Date range picker with time picker
         $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
         //Date range as a button
-        $('#daterange-btn').daterangepicker(
-                {
-                    ranges: {
-                        'Today': [moment(), moment()],
-                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                        'This Month': [moment().startOf('month'), moment().endOf('month')],
-                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                    },
-                    startDate: moment().subtract(29, 'days'),
-                    endDate: moment()
-                },
-                function (start, end) {
-                    $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $(function() {
+
+            var start = moment().subtract(29, 'days');
+            var end = moment();
+
+            function cb(start, end) {
+
+
+               starts = start.format('MM DD YYYY');
+                ends = end.format('MM DD YYYY');
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+
+
+
+                var start= document.getElementById('inputstart');
+                var end= document.getElementById('inputend');
+                start.value = starts
+                end.value = ends
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
                 }
-        );
+            }, cb);
+
+            cb(start, end);
+
+        });
 
         //Date picker
         $('#datepicker').datepicker({
@@ -272,7 +396,7 @@
 
         //Timepicker
         $(".timepicker").timepicker({
-            showInputs: false
+            showInputs: true
         });
     });
 
@@ -306,6 +430,8 @@
             }
         });
     });
+
+
 
     $(function(){
         $('#estudios').on('hide.bs.collapse', function () {
@@ -385,6 +511,68 @@
         $('.file')
                 .collapse('hide');
     });
+
+    $(function() {
+
+        $('#EXPORT-NODOS').searchableOptionList({
+
+            showSelectAll: true,
+
+            // set texts for this SOL only, overriding the defaults
+            texts: {
+                noItemsAvailable: 'No entries found',
+                selectAll: 'todo',
+                selectNone: 'Nada',
+                quickDelete: '&times;',
+                searchplaceholder: 'Nodos'
+            },
+
+            scrollTarget: $('#enviar-dashboard'),    // change the scrollTarget if neccessary
+            events: {
+
+                // override the default onScroll positioning event if neccessary
+                onScroll: function () {
+                    // gets called when the contents of the
+                    // my-content-area container are scrolled
+
+                    // now you need to position sol popup
+                    // below is the default implementation to
+                    // give you a hint how to position the popup
+                    // adapt it to your needs
+                    //
+                    // you have access to all internal SOL attributes via "this."
+
+                    var posY = this.$input.offset().top - this.config.scrollTarget.scrollTop() + this.$input.outerHeight() -25,
+                            selectionContainerWidth = this.$innerContainer.outerWidth(false) - parseInt(this.$selectionContainer.css('border-left-width'), 10) - parseInt(this.$selectionContainer.css('border-right-width'), 10);
+
+                    if (this.$innerContainer.css('display') !== 'block') {
+                        // container has a certain width
+                        // make selection container a bit wider
+                        selectionContainerWidth = Math.ceil(selectionContainerWidth * 1.2);
+                    } else {
+                        // no border radius on top
+                        this.$selectionContainer
+                                .css('border-top-right-radius', 'initial');
+
+                        if (this.$actionButtons) {
+                            this.$actionButtons
+                                    .css('border-top-right-radius', 'initial');
+                        }
+                    }
+
+                    this.$selectionContainer
+                            .css('top', Math.floor(posY))
+
+                            .css('background-color', 'green')
+                            .css('width', selectionContainerWidth)
+                    .css('position', inherit);
+
+                }
+            }
+        });
+
+    });
+
 </script>
 
 

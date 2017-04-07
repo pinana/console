@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         // Commands\Inspire::class,
-        'App\Console\Commands\PING'
+        'App\Console\Commands\QuizStart'
     ];
 
     /**

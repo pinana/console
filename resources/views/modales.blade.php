@@ -1,4 +1,8 @@
 @section('modales')
+
+
+//enviar nodos modal
+
 @section('modal_ENVIAR')
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -10,14 +14,33 @@
                     <h4 class="modal-title">enviar</h4>
                 </div>
                 <div class="modal-body">
-                    <p>select AETS</p>
-                    <select class="selectpicker">
-                        @foreach($aets as $aet)
-                            <option>{{$aet->description}}</option>
+                    <div class="col-md-12 tag_col" >
+                        <div class="col-md-6 tag_col" >
+                    <p>SELECT AETS</p>
+                        </div>
+                        </div>
+                    <div class="col-md-12 tag_col" >
+                        <div class="input-group">
 
 
-                        @endforeach
-                            <select>
+                            <div class="col-md-6 enviar" id="enviar-dashboard" >
+                                <select id="EXPORT-NODOS" name="EXPORT-NODOS" multiple="multiple">
+                                    @foreach($aets as $aet)
+                                        <option VALUE="{{$aet->description}}">{{$aet->description}}</option>
+
+                                    @endforeach
+
+                                </select>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+
 
 
 

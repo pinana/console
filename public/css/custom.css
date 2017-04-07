@@ -1,5 +1,7 @@
 body{ }
-
+.sol-selection-container {
+    display: none;
+}
 .nodos {
 
 
@@ -63,28 +65,9 @@ body{ }
 
 .actions{margin-bottom:10px;}
 
-.patients .box-header{background-color:#E0ECF8;}
 
-.patients .accordion-heading {  position: relative; }
-.patients .accordion-heading .edit {
-    position: absolute;
-    top: 8px;
-    right: 30px;
-}
-.patients .level1 { margin-left: 10px; border-bottom: solid 0.2px grey; background-color:#CEE3F6;  padding: 5px; }
-.patients .level1 .table { margin-bottom: 0px;}
-.patients .level2 .btn-xs { margin-right:5px; }
-.patients .level2 {margin-left:15px;
-    background-color: palegoldenrod;
-     }
-.patients .level2 .table { margin-bottom: 0px;}
-.patients .level3 { margin-left: 20px; padding: 5px;  }
-.patients .level3 .btn-xs { margin-right: 5px; }
-.patients .level4 { margin-left: 20px; padding: 5px;  }
-.patients .level4 .btn-xs { margin-right: 5px; }
-.patients .collapse.in { overflow: visible; }
 
-.patients .level1 a { color:black;  }
+
 
 .content-wrapper{
 
@@ -98,44 +81,11 @@ body{ }
 
 }
 
-.table>thead>tr>td {
-
-    padding:5px;
-
-}
 
 
 
-.table>tbody>tr>td{
-    padding:2px;
-}
-.table-studies>tbody>tr>td {
-    padding-left:13px;
-}
 
-#th-studies>th {
-    padding-left:15px;
-    background-color: palegoldenrod;
-    margin-left:200px;
-}
 
-#tr-studies>td {
-    padding-left:15px;
-    background-color: palegoldenrod;
-    margin-left:200px;
-}
-
-#table-studies>td {
-    padding-left:15px;
-    background-color: palegoldenrod;
-    margin-left:200px;
-}
-
-#table-studies>tr {
-    padding-left:15px;
-    background-color: palegoldenrod;
-    margin-left:200px;
-}
 .box-body {
 
     height: 250px;
@@ -161,3 +111,39 @@ body{ }
 
 .tag_col .input-group{display:flex;}
 .tags{padding: 0px;}
+
+/* boton esconder nodos */
+
+.boton_nodos_sh{
+    margin: 0px;
+
+    margin-bottom: 10px;
+
+
+               }
+
+#show_checked-nodes{
+
+
+}
+
+#show_checked-nodes button{
+    position: relative;
+    left: -30px;
+background-color: #0bd0cb;
+    border-radius: 0px 10px  10px 0px;
+}
+
+#show_nodes{
+    background-color: green;
+    border-radius: 10px 10px 10px 10px;
+    height: 50px;
+    padding-left: 20px;
+    padding-top: 5px;
+    opacity:0.0;
+    border-radius: 2px;
+    font-size: 1.2em;
+    color: white;
+
+
+}
